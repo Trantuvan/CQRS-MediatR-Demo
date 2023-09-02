@@ -5,5 +5,5 @@ Content-Type: application/json
 
 {
     "Id": 4,
-    "Name": "Product http file"
+    "Name": "Test Product 4"
 }
