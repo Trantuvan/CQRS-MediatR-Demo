@@ -13,6 +13,12 @@ public class FakeDataStore
         };
     }
 
+    public async Task EventOccured(Product product, string evt)
+    {
+        _products.Single(p => p.Id == product.Id).Name = $"{product.Name} evt: {evt}";
+        await Task.CompletedTask;
+    }
+
     public async Task AddProductAsync(Product product)
     {
         _products.Add(product);
