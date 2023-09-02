@@ -1,0 +1,6 @@
+@host = https://localhost:5001
+@id = 3
+PUT  {{host}}/api/products/updateproduct/{{id}}
+Content-Type: application/json
+
+"test put"

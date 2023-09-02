@@ -1,0 +1,9 @@
+@host = https://localhost:5001
+
+POST {{host}}/api/products/addproduct
+Content-Type: application/json
+
+{
+    "Id": 4,
+    "Name": "Product http file"
+}

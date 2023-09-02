@@ -1,0 +1,4 @@
+@host = https://localhost:5001
+
+GET {{host}}/api/products/getproducts
+Content-Type: application/json

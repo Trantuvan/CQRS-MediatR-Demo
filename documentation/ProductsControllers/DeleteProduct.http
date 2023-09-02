@@ -1,0 +1,5 @@
+@host = https://localhost:5001
+@id=3
+
+DELETE {{host}}/api/products/deleteproduct/{{id}}
+Content-Type: application/json
