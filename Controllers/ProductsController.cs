@@ -1,5 +1,6 @@
 using CQRSMediatRExample.Commands;
 using CQRSMediatRExample.Models;
+using CQRSMediatRExample.Notifications;
 using CQRSMediatRExample.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -41,6 +42,8 @@ public class ProductsController : ControllerBase
     public async Task<ActionResult> AddProduct([FromBody] Product product)
     {
         await _mediator.Send(new AddProductCommand(product));
+
+        await _mediator.Publish(new ProductAddedNotification(product));
 
         return CreatedAtAction(nameof(GetProductById), new { id = product.Id }, product);
     }
