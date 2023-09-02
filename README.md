@@ -16,3 +16,9 @@ Examples might be:
 
 - Sending an email
 - Invalidating a cache
+
+### MediatR Behaviors
+
+Often when we build applications, we have many cross-cutting concerns. These include authorization, validating, and logging.
+
+Instead of repeating this logic throughout our handlers, we can make use of Behaviors. Behaviors are very similar to ASP.NET Core middleware, in that they accept a request, perform some action, then (optionally) pass along the request.
