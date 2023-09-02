@@ -1,4 +1,6 @@
+using CQRSMediatRExample.Behaviors;
 using CQRSMediatRExample.Models;
+using MediatR;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +11,7 @@ builder.Services.AddSwaggerGen();
 //* Register MediatR
 builder.Services
     .AddSingleton<FakeDataStore>()
+    .AddSingleton(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>))
     .AddMediatR((cfg) => cfg.RegisterServicesFromAssembly(typeof(Program).Assembly));
 
 var app = builder.Build();
